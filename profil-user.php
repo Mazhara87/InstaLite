@@ -1,5 +1,5 @@
 <?php
-require_once('connexion.php');
+require_once('./connexion.php');
 ?>
 
 <!DOCTYPE html>
@@ -14,14 +14,10 @@ require_once('connexion.php');
 
     <?php
 
-    try {
-    $db = new PDO($dsn, $user, $password);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+  
    
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         
-        $db = new PDO( $dns, $user, $password);
 
         
         $query = "SELECT * FROM users WHERE id = :id";
@@ -36,7 +32,7 @@ require_once('connexion.php');
             echo "<p><strong>Name :</strong> " . $user['name'] . "</p>";
 
             //   // Add the link to the update page
-            //   echo "<a href='update-patient.php?id=" . $user['id'] . "'>Modifier le patient</a>";
+            //   echo "<a href='update-avatar.php?id=" . $user['id'] . "'>Change avatar</a>";
             
         } else {
             echo "User not found.";
@@ -44,9 +40,7 @@ require_once('connexion.php');
     } else {
         echo "Invalid user ID.";
     }
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
+
     ?>
 </body>
 </html>
