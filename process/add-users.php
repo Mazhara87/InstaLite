@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('connexion.php');
+require_once('../connexion.php');
 
 // var_dump($_POST);
 
@@ -16,7 +16,7 @@ if(
         'name' => $_POST['name'],
 
     ];
-    $sql = "INSERT INTO users (username, password, name) VALUES (:firstname, :lastname, :birthdate, :phone, :mail)";
+    $sql = "INSERT INTO users (username, password, name) VALUES (:username, :password, :name)";
     $request= $db->prepare($sql);
     $request->execute($data);
 }
