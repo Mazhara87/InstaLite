@@ -20,5 +20,5 @@ if(
     $request= $db->prepare($sql);
     $request->execute($data);
 }
-header('Location: profil-user.php')
+header('Location: ../profil-user.php')
 ?>
