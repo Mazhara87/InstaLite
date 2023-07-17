@@ -1,6 +1,7 @@
 <?php
 
 require_once('connexion.php');
+?>
 
 
 <!DOCTYPE html>
@@ -14,5 +15,3 @@ require_once('connexion.php');
     
 </body>
 </html>
-
-?>
