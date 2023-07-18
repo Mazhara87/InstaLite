@@ -25,4 +25,5 @@ if (
     $_SESSION['user']['password'] =  $_POST['password'];
     $_SESSION['user']['name'] =  $_POST['name'];
 }
+header('Location: ../profil-user.php');
 ?>
