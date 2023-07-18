@@ -8,7 +8,7 @@ include_once('partials/header.php');
 
 
 <ul>
-    <form action="./process/add-users.php" method="post">
+    <form action="./process/login.php" method="post">
         <label for="username">User name:</label>
         <input type="text" id="username" name="username" required><br>
 
