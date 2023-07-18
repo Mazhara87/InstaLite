@@ -19,6 +19,9 @@ include_once('partials/header.php');
     <p><strong>Name:</strong> <?php echo $_SESSION['user']['name']; ?></p>
     
 
-
+    <form action="./main.php" method="post">
+    <button type="submit">Home</Main></button>
+    </form>
+    
 </body>
 </html>
