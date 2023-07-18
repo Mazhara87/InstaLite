@@ -24,3 +24,7 @@ include_once('partials/header.php');
     </form>
     </ul>
 
+
+    <?php 
+include_once('partials/footer.php');
+?>
