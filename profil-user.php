@@ -3,6 +3,9 @@ session_start();
 require_once('connexion.php');
 ?>
 
+<?php
+include_once('partials/header.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +17,7 @@ require_once('connexion.php');
 <body>
     <h1>My Insta</h1>
     <p><strong>Name:</strong> <?php echo $_SESSION['user']['name']; ?></p>
+    
 
 
 </body>
