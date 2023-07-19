@@ -1,0 +1,93 @@
+/* header style */
+
+#header {
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+/* profil-user style */
+
+.name {
+    color: blueviolet;
+    font-size: 24px;
+    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h2 {
+    color: #021A6F;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.grid-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, auto);
+}
+
+.grid-container_item {
+    padding-top: 100%;
+    padding: 0;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.menu {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0px;
+    display: grid;
+    gap: 0px;
+    grid-template-columns: repeat(5, auto);
+}
+
+.menu button {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+}
+
+.main-button {
+    background: rgba(0, 200, 245, 0.381);
+    border: 0cm;
+}
+
+.search-button {
+    background: #FFD435;
+    border: 0cm;
+}
+
+.addpost-button {
+    background: #CCDE57;
+    border: 0cm;
+}
+
+.messages-button {
+    background: #A750A5;
+    border: 0cm;
+}
+
+.profile-button {
+    background: #F47A66;
+    border: 0cm;
+}
