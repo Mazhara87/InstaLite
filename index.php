@@ -1,13 +1,15 @@
 <?php
 require_once('connexion.php');
+session_start();
 ?>
 
 <?php
 include_once('partials/header.php');
 ?>
 
-
-<ul>
+<?php if (! isset($_SESSION['user'])):
+?>
+<h2>Login</h2>
     <form action="./process/login.php" method="post">
         <label for="username">User name:</label>
         <input type="text" id="username" name="username" required><br>
@@ -20,9 +22,18 @@ include_once('partials/header.php');
 
 
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Login">
     </form>
-</ul>
+    <p>New user? <button><a href="register.php">Register</a></button></p>
+<?php else: ?>
+    <p>Welcome, <?php echo $_SESSION['user']['name']; ?>!</p>
+    <img src="<?php echo $_SESSION['user']['avatar_url'];
+    ?>"
+    alt="Avatar">
+   
+<?php endif; ?>
+
+
 
 
     <?php 
