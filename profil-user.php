@@ -7,18 +7,25 @@ require_once('connexion.php');
 include_once('partials/header.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/style.css">
-    <title>My Insta</title>
-</head>
-<body>
+
     <div id="profile">
-      <h2>My Insta</h2>
-      <p class="name"><?php echo $_SESSION['user']['name']; ?></p>
+      <div><h2 class="My Insta">My Insta</h2></div>
+      <div class="container container-header">
+         
+         <div>
+         <p class="name"><?php echo $_SESSION['user']['name']; ?></p>
+         </div>
+
+         <div>
+         <?php if (isset($_SESSION['user'])): ?>
+         <a href="process/deconnexion.php">Sign out</a>
+         <?php endif; ?>
+
+                    <!-- <form action="../process/deconnexion.php" method="post">
+                        <button type="submit">Sign out</button>
+                    </form> -->   
+         </div>            
+       </div>
     </div>
 
     <div class="gallery">
