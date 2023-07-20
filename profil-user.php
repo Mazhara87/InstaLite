@@ -15,10 +15,10 @@ include_once('partials/header.php');
     <div class="container container-header">
 
         <div>
-            <!-- avatar -->
-            <?php if (isset($_SESSION['user']['avatar_url'])) {    ?>
+            <h2 class="avatar"><?php if (isset($_SESSION['user']['avatar_url'])) {    ?>
                 <img src=<?php echo $_SESSION['user']['avatar_url']; ?> alt="avatar">
-            <?php } ?>
+            <?php } ?></h2>
+
             <p class="name"><?php echo $_SESSION['user']['name']; ?></p>
         </div>
 
