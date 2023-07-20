@@ -18,9 +18,15 @@ include_once('partials/header.php');
 <body>
     <div id="profile">
       <h2>My Insta</h2>
+      
+      <!-- avatar -->
+      <?php if (isset($_SESSION['user']['avatar_url'])){    ?>
+        <img src=<?php echo $_SESSION['user']['avatar_url'];?> alt="avatar">
+      <?php } ?>
+
       <p class="name"><?php echo $_SESSION['user']['name']; ?></p>
     </div>
-
+      
     <div class="gallery">
     <div class="grid-container">
         <div class="grid-container_item">

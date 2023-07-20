@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user']['id'] = $user['id'];
         $_SESSION['user']['username'] = $user['username'];
         $_SESSION['user']['name'] = $user['name'];
-
+        $_SESSION['user']['avatar_url'] = $user['avatar_url'];
         header('Location: ../profil-user.php');
         exit();
     } else {

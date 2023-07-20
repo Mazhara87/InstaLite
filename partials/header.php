@@ -10,11 +10,11 @@
     <header id="header">
         <div class="container container-header">
             <div>
-                <h1 class="title"><img src="../assets/image/Logo.jpeg" height="100px"></h1>
+                <h1 class="title"><img src="assets/image/Logo.jpeg" height="100px"></h1>
             </div>
             <div>
             <?php if (isset($_SESSION['user'])): ?>
-            <a href="../process/deconnexion.php">Sign out</a>
+            <a href="process/deconnexion.php">Sign out</a>
         <?php endif; ?>
 
                     <!-- <form action="../process/deconnexion.php" method="post">
