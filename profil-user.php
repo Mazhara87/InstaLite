@@ -16,8 +16,8 @@ include_once('partials/header.php');
                 <img src=<?php echo $_SESSION['user']['avatar_url']; ?> alt="avatar">
             </div>
         <?php } ?>
-            <p class="name"><?php echo $_SESSION['user']['name']; ?></p>
-        
+        <p class="name"><?php echo $_SESSION['user']['name']; ?></p>
+
         <div class="sign-out">
             <?php if (isset($_SESSION['user'])) : ?>
                 <a href="process/deconnexion.php">Sign out</a>
@@ -26,6 +26,23 @@ include_once('partials/header.php');
             <!-- <form action="../process/deconnexion.php" method="post">
                         <button type="submit">Sign out</button>
                     </form> -->
+        </div>
+
+        <!-- Вывод фотографий пользователя -->
+        <div class="user-photos">
+            <h2>Your Photos</h2>
+            <?php
+            $user_id = $_SESSION['user']['id'];
+            $sql = "SELECT * FROM photos WHERE users_id = :user_id ORDER BY photos_id DESC";
+            $request = $db->prepare($sql);
+            $request->execute(['user_id' => $user_id]);
+
+            while ($photo = $request->fetch()) {
+                $imageURL = $photo['image_url'];
+
+                echo "<img src='$imageURL' alt='Photo'><br>";
+            }
+            ?>
         </div>
     </div>
 </div>
@@ -49,27 +66,7 @@ include_once('partials/header.php');
 </div>
 
 
-<div class="menu">
-    <form action="./main.php" method="post">
-        <button class="main-button" type="submit"><img src="./assets/image/home.png" height="50px"></Main></button>
-    </form>
 
-    <form>
-        <button class="search-button" type="submit"><img src="./assets/image/search.png" height="50px"></Search></button>
-    </form>
-
-    <form action="./process/add-photo.php">
-        <button class="addpost-button" type="submit"><img src="./assets/image/add.png" height="50px"></AddPost></button>
-    </form>
-
-    <form action="./process/add-comments.php">
-        <button class="messages-button" type="submit"><img src="./assets/image/chat.png" height="50px"></Messages></button>
-    </form>
-
-    <form action="./profil-user.php" method="post">
-        <button class="profile-button" type="submit"><img src="./assets/image/profile.png" height="50px"></Profile></button>
-    </form>
-</div>
 </body>
 
 </html>

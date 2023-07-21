@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($user && $user['password'] === $password) {
         // Пользователь найден и пароль совпадает, сохраняем данные в сессии
-        $_SESSION['user']['id'] = $user['id'];
+        $_SESSION['user']['id'] = $user['users_id'];
         $_SESSION['user']['username'] = $user['username'];
         $_SESSION['user']['name'] = $user['name'];
         $_SESSION['user']['avatar_url'] = $user['avatar_url'];

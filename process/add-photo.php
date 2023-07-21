@@ -2,35 +2,69 @@
 session_start();
 require_once('../connexion.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // check user log in
-    if (!isset($_SESSION['user'])) {
-        header('Location: login.php');
-        exit();
-    }
+$target_dir = $_SERVER['DOCUMENT_ROOT'] . "/InstaLite/uploads/pictures/";
+$target_file = $target_dir . basename($_FILES["image"]["name"]);
 
-    // Получаем данные из формы
-    $imageURL = $_POST['image_url'];
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-    // ID user
-    $userId = $_SESSION['user']['users_id'];
+// Check if image file is a actual image or fake image
+if(isset($_POST["upload_image"])) {
+  $check = getimagesize($_FILES["image"]["tmp_name"]);
+  
+  if($check !== false) {
+    echo "File is an image - " . $check["mime"] . ".";
+    $uploadOk = 1;
+  } else {
+    echo "File is not an image.";
+    $uploadOk = 0;
+  }
+}
 
-    // add pfoto in db
+// Check if file already exists
+if (file_exists($target_file)) {
+  echo "Sorry, file already exists.";
+  $uploadOk = 0;
+}
+
+// Check file size
+if ($_FILES["image"]["size"] > 500000000) {
+  echo "Sorry, your file is too large.";
+  $uploadOk = 0;
+}
+
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+  $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+  echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+
+
+    // Добавляем нового пользователя
+    $data = [
+        ':image_url' => $target_file,
+        ':users_id' => $_SESSION['user']['id']
+    ];
+
     $sql = "INSERT INTO photos (image_url, users_id) VALUES (:image_url, :users_id)";
     $request = $db->prepare($sql);
-    $request->execute(['image_url' => $imageURL, 'users_id' => $userId]);
+    $request->execute($data);
+
 
     
-    header('Location: profil-user.php');
-    exit();
+  } else {
+    echo "Sorry, there was an error uploading your file.";
+  }
 }
+
+header('Location: ../profil-user.php');
+
 ?>
-
-
-<h2>Add Photo</h2>
-<form action="add-photo.php" method="post">
-    <label for="image_url">Image URL:</label>
-    <input type="text" id="image_url" name="image_url" required><br>
-
-    <input type="submit" value="Add Photo">
-</form>
