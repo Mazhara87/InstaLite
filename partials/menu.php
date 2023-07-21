@@ -7,11 +7,11 @@
         <button class="search-button" type="submit"><img src="./assets/image/search.png" height="50px"></Search></button>
     </form>
 
-    <form>
+    <form action="./process/add-photo.php">
         <button class="addpost-button" type="submit"><img src="./assets/image/add.png" height="50px"></AddPost></button>
     </form>
 
-    <form>
+    <form action="./process/add-comments.php">
         <button class="messages-button" type="submit"><img src="./assets/image/chat.png" height="50px"></Messages></button>
     </form>
 
@@ -19,6 +19,6 @@
         <button class="profile-button" type="submit"><img src="./assets/image/profile.png" height="50px"></Profile></button>
     </form>
 </div>
-</body>
+
 
 </html>

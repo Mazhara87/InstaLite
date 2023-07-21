@@ -37,3 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <input type="submit" value="Add Comment">
 </form>
+
+<?php
+include_once('partials/menu.php');
+?>

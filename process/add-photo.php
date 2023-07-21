@@ -34,3 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <input type="submit" value="Add Photo">
 </form>
+
+<?php
+include_once('partials/menu.php');
+?>
