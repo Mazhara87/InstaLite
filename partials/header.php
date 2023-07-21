@@ -9,11 +9,7 @@
 
 <body>
     <header id="header">
-        <!-- <div class="container container-header"> -->
             <div>
                 <h1 class="title"><img src="assets/image/Logo.jpeg" height="100px"></h1>
             </div>
-
-        <!-- </div> -->
-
     </header>

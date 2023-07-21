@@ -22,10 +22,6 @@ include_once('partials/header.php');
             <?php if (isset($_SESSION['user'])) : ?>
                 <a href="process/deconnexion.php">Sign out</a>
             <?php endif; ?>
-
-            <!-- <form action="../process/deconnexion.php" method="post">
-                        <button type="submit">Sign out</button>
-                    </form> -->
         </div>
 
         <!-- Вывод фотографий пользователя -->
@@ -67,9 +63,6 @@ include_once('partials/header.php');
 
 
 
-</body>
-
-</html>
 <?php
 include_once('partials/menu.php');
 ?>

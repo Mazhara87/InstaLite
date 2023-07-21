@@ -19,6 +19,6 @@
         <button class="profile-button" type="submit"><img src="./assets/image/profile.png" height="50px"></Profile></button>
     </form>
 </div>
-</body>
+
 
 </html>
