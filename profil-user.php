@@ -11,18 +11,14 @@ include_once('partials/header.php');
 <div id="profile">
     <div>
         <h2 class="My Insta">My Insta</h2>
-    </div>
-    <div class="container container-header">
-
-        <div>
-            <h2 class="avatar"><?php if (isset($_SESSION['user']['avatar_url'])) {    ?>
+        <?php if (isset($_SESSION['user']['avatar_url'])) {    ?>
+            <div class="avatar">
                 <img src=<?php echo $_SESSION['user']['avatar_url']; ?> alt="avatar">
-            <?php } ?></h2>
-
+            </div>
+        <?php } ?>
             <p class="name"><?php echo $_SESSION['user']['name']; ?></p>
-        </div>
-
-        <div>
+        
+        <div class="sign-out">
             <?php if (isset($_SESSION['user'])) : ?>
                 <a href="process/deconnexion.php">Sign out</a>
             <?php endif; ?>
@@ -33,6 +29,7 @@ include_once('partials/header.php');
         </div>
     </div>
 </div>
+
 
 <div class="gallery">
     <div class="grid-container">
@@ -76,3 +73,6 @@ include_once('partials/header.php');
 </body>
 
 </html>
+<?php
+include_once('partials/menu.php');
+?>

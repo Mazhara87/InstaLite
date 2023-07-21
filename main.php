@@ -33,8 +33,11 @@ include_once('partials/header.php');
     ?>
 
     <a href="profil-user.php">Back to Profile</a>
-</body>
-</html>
+
+<?php
+include_once('partials/menu.php');
+?>
+
 <?php
 include_once('partials/footer.php');
 ?>
