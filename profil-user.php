@@ -61,11 +61,11 @@ include_once('partials/header.php');
         <button class="search-button" type="submit"><img src="./assets/image/search.png" height="50px"></Search></button>
     </form>
 
-    <form>
+    <form action="./process/add-photo.php">
         <button class="addpost-button" type="submit"><img src="./assets/image/add.png" height="50px"></AddPost></button>
     </form>
 
-    <form>
+    <form action="./process/add-comments.php">
         <button class="messages-button" type="submit"><img src="./assets/image/chat.png" height="50px"></Messages></button>
     </form>
 
