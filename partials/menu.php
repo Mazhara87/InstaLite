@@ -11,7 +11,7 @@
         <button class="addpost-button" type="submit"><img src="./assets/image/add.png" height="50px"></AddPost></button>
     </form>
 
-    <form action="./process/add-comments.php">
+    <form action="./user-add-comments.php">
         <button class="messages-button" type="submit"><img src="./assets/image/chat.png" height="50px"></Messages></button>
     </form>
 
