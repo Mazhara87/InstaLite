@@ -50,7 +50,7 @@ if ($uploadOk == 0) {
 
     // Добавляем нового пользователя
     $data = [
-        ':image_url' => $target_file,
+        ':image_url' => './uploads/pictures/' . basename($_FILES["image"]["name"]),
         ':users_id' => $_SESSION['user']['id']
     ];
 
