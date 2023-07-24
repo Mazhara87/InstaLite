@@ -28,7 +28,7 @@ body {
     
 }
 
-#profile container-header {
+#profile .container-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -95,7 +95,7 @@ h2 {
 }
 
 .grid-container_item {
-    padding-top: 100%;
+    /* padding-top: 100%; */
     padding: 0;
 }
 

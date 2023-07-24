@@ -6,6 +6,12 @@ session_start();
 <?php
 include_once('partials/header.php');
 ?>
+ <div class="sign-out">
+            <?php if (isset($_SESSION['user'])) : ?>
+                <a href="process/deconnexion.php">Sign out</a>
+            <?php endif; ?>
+
+        </div>
 
 <?php if (! isset($_SESSION['user'])):
 ?>
@@ -34,6 +40,9 @@ include_once('partials/header.php');
 <?php endif; ?>
 
 
+<?php
+include_once('partials/menu.php');
+?>
 
 
     <?php 

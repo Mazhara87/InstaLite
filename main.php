@@ -16,25 +16,32 @@ include_once('partials/header.php');
                 <img src=<?php echo $_SESSION['user']['avatar_url']; ?> alt="avatar">
             </div>
         <?php } ?>
-            <p class="name"><?php echo $_SESSION['user']['name']; ?></p>
-        
+        <p class="name"><?php echo $_SESSION['user']['name']; ?></p>
+
     </div>
 </div>
 
 <div class="posts">
- <div class="grid-container">
- <h2>New Photos</h2>
-    <?php
-    $sql = "SELECT * FROM photos ORDER BY photos_id DESC";
-    $request = $db->query($sql);
 
-    while ($photo = $request->fetch()) {
-        $imageURL = $photo['image_url'];
+    <div class="grid-container">
+        <div>
+            <h2>New Photos</h2>
+        </div>
 
-        echo "<img src='$imageURL' alt='Photo'><br>";
-    }
-    ?>
- </div>
+        <?php
+        $sql = "SELECT * FROM photos ORDER BY photos_id DESC";
+        $request = $db->query($sql);
+
+        while ($photo = $request->fetch()) {
+            $imageURL = $photo['image_url']; ?>
+            <div class="grid-container_item">
+                <?php
+
+                echo "<img src='$imageURL' alt='Photo'><br>"; ?>
+            </div>
+        <?php }
+        ?>
+    </div>
 </div>
 
 <?php
